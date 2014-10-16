@@ -1,3 +1,6 @@
+
+/**
+
 notifications = new Meteor.Stream('server-notifications');
 
 //allow any connected client to listen on the stream
@@ -47,3 +50,4 @@ setInterval(function() {
 
 
 }, 10000);
+*/
