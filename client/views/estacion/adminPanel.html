@@ -1,70 +1,70 @@
 <template name="adminPanel">
-  <form class="form-inline" role="form">
-  <div class="form-group">
-    <label class="sr-only" for="exampleInputEmail2">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Enter email">
-  </div>
-  <div class="form-group">
-    <div class="input-group">
-      <div class="input-group-addon">@</div>
-      <input class="form-control" type="email" placeholder="Enter email">
-    </div>
-  </div>
-  <div class="form-group">
-    <label class="sr-only" for="exampleInputPassword2">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password">
-  </div>
-  <div class="checkbox">
-    <label>
-      <input type="checkbox"> Remember me
-    </label>
-  </div>
-  <button type="submit" class="btn btn-default">Sign in</button>
-</form>
+	<form class="form-inline" role="form">
+		<fieldset>
 
-<form class="form-inline" role="form">
-  <div class="form-group">
-    <label class="sr-only" for="exampleInputEmail2">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Enter email">
-  </div>
-  <div class="form-group">
-    <div class="input-group">
-      <div class="input-group-addon">@</div>
-      <input class="form-control" type="email" placeholder="Enter email">
-    </div>
-  </div>
-  <div class="form-group">
-    <label class="sr-only" for="exampleInputPassword2">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password">
-  </div>
-  <div class="checkbox">
-    <label>
-      <input type="checkbox"> Remember me
-    </label>
-  </div>
-  <button type="submit" class="btn btn-default">Sign in</button>
-</form>
+<!-- Form Name -->
+<legend>Sensor de humedad</legend>
 
-<form class="form-inline" role="form">
-  <div class="form-group">
-    <label class="sr-only" for="exampleInputEmail2">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Enter email">
-  </div>
-  <div class="form-group">
-    <div class="input-group">
-      <div class="input-group-addon">@</div>
-      <input class="form-control" type="email" placeholder="Enter email">
-    </div>
-  </div>
-  <div class="form-group">
-    <label class="sr-only" for="exampleInputPassword2">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password">
-  </div>
-  <div class="checkbox">
-    <label>
-      <input type="checkbox"> Remember me
-    </label>
-  </div>
-  <button type="submit" class="btn btn-default">Sign in</button>
-</form>
+</fieldset>
+		<div class="form-group">
+			<label class="sr-only" for="coefA1">Coeficiente A</label>
+			<input type="number" class="form-control" id="coefA1" placeholder="Coeficiente A">
+		</div>
+		<div class="form-group">
+			<label class="sr-only" for="coefB1">Coeficiente B</label>
+			<input type="number" class="form-control" id="coefB1" placeholder="Coeficiente B">
+		</div>
+		<div class="form-group">
+			<label class="sr-only" for="coefC1">Coeficiente C</label>
+			<input type="number" class="form-control" id="coefC1" placeholder="Coeficiente C">
+		</div>
+		<button type="submit" class="btn btn-default">Guardar</button>
+	</form>
+
+	<form class="form-inline" role="form">
+		<fieldset>
+
+<!-- Form Name -->
+<legend>Sensor de temperatura</legend>
+
+</fieldset>
+		<div class="form-group">
+			<label class="sr-only" for="coefA2">Coeficiente A</label>
+			<input type="number" class="form-control" id="coefA2" placeholder="Coeficiente A">
+		</div>
+		<div class="form-group">
+			<label class="sr-only" for="coefB2">Coeficiente B</label>
+			<input type="number" class="form-control" id="coefB2" placeholder="Coeficiente B">
+		</div>
+		<div class="form-group">
+			<label class="sr-only" for="coefC2">Coeficiente C</label>
+			<input type="number" class="form-control" id="coefC2" placeholder="Coeficiente C">
+		</div>
+		<button type="submit" class="btn btn-default">Guardar</button>
+	</form>
+
+	<form class="form-inline" role="form">
+		<fieldset>
+
+<!-- Form Name -->
+<legend>Sensor de viento</legend>
+
+</fieldset>
+		<div class="form-group">
+			<label class="sr-only" for="coefA3">Coeficiente A</label>
+			<input type="number" class="form-control" id="coefA3" placeholder="Coeficiente A">
+		</div>
+		<div class="form-group">
+			<label class="sr-only" for="coefB3">Coeficiente B</label>
+			<input type="number" class="form-control" id="coefB3" placeholder="Coeficiente B">
+		</div>
+		<div class="form-group">
+			<label class="sr-only" for="coefC3">Coeficiente C</label>
+			<input type="number" class="form-control" id="coefC3" placeholder="Coeficiente C">
+		</div>
+		<button type="submit" class="btn btn-default">Guardar</button>
+	</form>
+
+
+
 </template>
