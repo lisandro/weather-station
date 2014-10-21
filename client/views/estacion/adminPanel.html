@@ -64,13 +64,13 @@
 			<legend>Sensores habilitados</legend>
 		</fieldset>
 		<label class="checkbox-inline">
-			<input type="checkbox" id="check_hum" name="check_hum" > Sensor de humedad
+			<input type="checkbox" id="check_hum" name="check_hum" checked="{{check_hum}}"> Sensor de humedad
 		</label>
 		<label class="checkbox-inline">
-			<input type="checkbox" id="check_temp" name="check_temp" value="{{check_temp}}"> Sensor de temperatura
+			<input type="checkbox" id="check_temp" name="check_temp" checked="{{check_temp}}"> Sensor de temperatura
 		</label>
 		<label class="checkbox-inline">
-			<input type="checkbox" id="check_wind" name="check_wind" > Sensor de viento
+			<input type="checkbox" id="check_wind" name="check_wind" checked="{{check_wind}}" > Sensor de viento
 		</label>
 {{/each}}
 		<button type="submit" class="btn btn-default">Guardar</button>
