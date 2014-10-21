@@ -3,83 +3,74 @@
 	<form class="form-inline" role="form">
 		<fieldset>
 
-			<!-- Form Name -->
-			<legend>Sensor de humedad</legend>
+		<!-- Form Name -->
+		<legend>Sensor de humedad</legend>
 
 		</fieldset>
 		<div class="form-group">
-			<label class="sr-only" for="coefA1">Coeficiente A</label>
-			<input type="number" class="form-control" id="coefA1" placeholder="Coeficiente A">
+			<label class="sr-only" for="hum_a">Coeficiente A</label>
+			<input type="number" class="form-control" id="hum_a" value="{{hum_a}}" placeholder="Coeficiente A">
 		</div>
 		<div class="form-group">
-			<label class="sr-only" for="coefB1">Coeficiente B</label>
-			<input type="number" class="form-control" id="coefB1" placeholder="Coeficiente B">
+			<label class="sr-only" for="hum_b">Coeficiente B</label>
+			<input type="number" class="form-control" id="hum_b" value="{{hum_b}}" placeholder="Coeficiente B">
 		</div>
 		<div class="form-group">
-			<label class="sr-only" for="coefC1">Coeficiente C</label>
-			<input type="number" class="form-control" id="coefC1" placeholder="Coeficiente C">
-		</div>
-		<button type="submit" class="btn btn-default">Guardar</button>
-	</form>
-
-	<form class="form-inline" role="form">
+			<label class="sr-only" for="hum_c">Coeficiente C</label>
+			<input type="number" class="form-control" id="hum_c" value="{{hum_c}}" placeholder="Coeficiente C">
+		</div>		
+	
 		<fieldset>
 
-			<!-- Form Name -->
-			<legend>Sensor de temperatura</legend>
+		<!-- Form Name -->
+		<legend>Sensor de temperatura</legend>
 
 		</fieldset>
 		<div class="form-group">
-			<label class="sr-only" for="coefA2">Coeficiente A</label>
-			<input type="number" class="form-control" id="coefA2" placeholder="Coeficiente A">
+			<label class="sr-only" for="temp_a">Coeficiente A</label>
+			<input type="number" class="form-control" id="temp_a" value="{{temp_a}}" placeholder="Coeficiente A">
 		</div>
 		<div class="form-group">
-			<label class="sr-only" for="coefB2">Coeficiente B</label>
-			<input type="number" class="form-control" id="coefB2" placeholder="Coeficiente B">
+			<label class="sr-only" for="temp_b">Coeficiente B</label>
+			<input type="number" class="form-control" id="temp_b" value="{{temp_b}}" placeholder="Coeficiente B">
 		</div>
 		<div class="form-group">
-			<label class="sr-only" for="coefC2">Coeficiente C</label>
-			<input type="number" class="form-control" id="coefC2" placeholder="Coeficiente C">
-		</div>
-		<button type="submit" class="btn btn-default">Guardar</button>
-	</form>
+			<label class="sr-only" for="temp_c">Coeficiente C</label>
+			<input type="number" class="form-control" id="temp_c" value="{{temp_c}}" placeholder="Coeficiente C">
+		</div>	
 
-	<form class="form-inline" role="form">
 		<fieldset>
 
-			<!-- Form Name -->
-			<legend>Sensor de viento</legend>
+		<!-- Form Name -->
+		<legend>Sensor de viento</legend>
 
 		</fieldset>
 		<div class="form-group">
-			<label class="sr-only" for="coefA3">Coeficiente A</label>
-			<input type="number" class="form-control" id="coefA3" placeholder="Coeficiente A">
+			<label class="sr-only" for="wind_a">Coeficiente A</label>
+			<input type="number" class="form-control" id="wind_a" value="{{wind_a}}" placeholder="Coeficiente A">
 		</div>
 		<div class="form-group">
-			<label class="sr-only" for="coefB3">Coeficiente B</label>
-			<input type="number" class="form-control" id="coefB3" placeholder="Coeficiente B">
+			<label class="sr-only" for="wind_b">Coeficiente B</label>
+			<input type="number" class="form-control" id="wind_b" value="{{wind_b}}" placeholder="Coeficiente B">
 		</div>
 		<div class="form-group">
-			<label class="sr-only" for="coefC3">Coeficiente C</label>
-			<input type="number" class="form-control" id="coefC3" placeholder="Coeficiente C">
+			<label class="sr-only" for="wind_c">Coeficiente C</label>
+			<input type="number" class="form-control" id="wind_c" value="{{wind_c}}" placeholder="Coeficiente C">
 		</div>
-		<button type="submit" class="btn btn-default">Guardar</button>
-	</form>
 
-
-	<form class="form-inline" role="form">
 		<fieldset>
 			<legend>Sensores habilitados</legend>
 		</fieldset>
 		<label class="checkbox-inline">
-			<input type="checkbox" id="inlineCheckbox1" value="option1"> Sensor de humedad
+			<input type="checkbox" id="check_hum" name="check_hum" value="{{check_hum}}"> Sensor de humedad
 		</label>
 		<label class="checkbox-inline">
-			<input type="checkbox" id="inlineCheckbox2" value="option2"> Sensor de temperatura
+			<input type="checkbox" id="check_temp" name="check_temp" value="{{check_temp}}"> Sensor de temperatura
 		</label>
 		<label class="checkbox-inline">
-			<input type="checkbox" id="inlineCheckbox3" value="option3"> Sensor de viento
+			<input type="checkbox" id="check_wind" name="check_wind" value="{{check_wind}}"> Sensor de viento
 		</label>
+
 		<button type="submit" class="btn btn-default">Guardar</button>
 	</form>
 </div>
