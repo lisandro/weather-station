@@ -1,3 +1,4 @@
+Meteor.subscribe('sensores');
 /**
 notifications = new Meteor.Stream('server-notifications');
 

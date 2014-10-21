@@ -1,14 +1,20 @@
 Sensores = new Meteor.Collection('sensores');
 
+Sensores.allow({
+  insert: function(userId, lugar){
+    return true;
+  },
+  update: function(userId, lugares, fields, modifier){
+    return true;
+  },
+  remove: function (userId, docs){
+    return true;
+  }
+});
+
 Meteor.methods({
   sensor: function(sensorAttributes) {
-    var user = Meteor.user()
-      //roomWithSamename = Rooms.findOne({name: roomAttributes.name});
-    
-    // ensure the user is logged in
-    //if (!user)
-      //throw new Meteor.Error(401, "Please login to edit sensors");
-
+    var user = Meteor.user();
     // Capaz se puede hacer lo de sensor.hum_a = sensorAttributes.hum_a;
     
     // pick out the whitelisted keys

@@ -1,4 +1,8 @@
+Meteor.publish('sensores', function() {
 
+ return Sensores.find();
+
+});
 /**
 
 notifications = new Meteor.Stream('server-notifications');

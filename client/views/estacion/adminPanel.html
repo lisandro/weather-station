@@ -7,6 +7,9 @@
 		<legend>Sensor de humedad</legend>
 
 		</fieldset>
+		{{#each posts}}
+
+
 		<div class="form-group">
 			<label class="sr-only" for="hum_a">Coeficiente A</label>
 			<input type="number" class="form-control" id="hum_a" value="{{hum_a}}" placeholder="Coeficiente A">
@@ -40,7 +43,6 @@
 		</div>	
 
 		<fieldset>
-
 		<!-- Form Name -->
 		<legend>Sensor de viento</legend>
 
@@ -62,15 +64,15 @@
 			<legend>Sensores habilitados</legend>
 		</fieldset>
 		<label class="checkbox-inline">
-			<input type="checkbox" id="check_hum" name="check_hum" value="{{check_hum}}"> Sensor de humedad
+			<input type="checkbox" id="check_hum" name="check_hum" > Sensor de humedad
 		</label>
 		<label class="checkbox-inline">
 			<input type="checkbox" id="check_temp" name="check_temp" value="{{check_temp}}"> Sensor de temperatura
 		</label>
 		<label class="checkbox-inline">
-			<input type="checkbox" id="check_wind" name="check_wind" value="{{check_wind}}"> Sensor de viento
+			<input type="checkbox" id="check_wind" name="check_wind" > Sensor de viento
 		</label>
-
+{{/each}}
 		<button type="submit" class="btn btn-default">Guardar</button>
 	</form>
 </div>
@@ -95,7 +97,7 @@
 		<div class="form-group">
 			<div class="input-group">
 				<input class="form-control" type="number" placeholder="Umbral de viento">
-				<div class="input-group-addon">Km/h</div>
+				<div class="input-group-addon"> {{hum_c}} Km/h</div>
 			</div>
 		</div>
 		<div class="form-group">
