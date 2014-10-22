@@ -27,13 +27,3 @@ Template.adminPanel.events({
     });
   }
 });
-
-
-Template.adminPanel.helpers({
-
- posts: function() {
-
-  return Sensores.find();
-
- }
-});
