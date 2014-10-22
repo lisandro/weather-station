@@ -83,26 +83,26 @@
 		</fieldset>
 		<div class="form-group">
 			<div class="input-group">
-				<input class="form-control" type="number" placeholder="Umbral de humedad">
+				<input class="form-control" id="umbrl_hum" type="number" placeholder="Umbral de humedad" value="{{umbral_hum}}">
 				<div class="input-group-addon">%</div>
 			</div>
 		</div>
 		<div class="form-group">
 			<div class="input-group">
-				<input class="form-control" type="number" placeholder="Umbral de temperatura">
+				<input class="form-control" id="umbrl_temp" type="number" placeholder="Umbral de temperatura" value="{{umbral_temp}}">
 				<div class="input-group-addon">°C</div>
 			</div>
 		</div>
 		<div class="form-group">
 			<div class="input-group">
-				<input class="form-control" type="number" placeholder="Umbral de viento">
-				<div class="input-group-addon"> {{hum_c}} Km/h</div>
+				<input class="form-control" id="umbrl_wind" type="number" placeholder="Umbral de viento" value="{{umbral_viento}}">
+				<div class="input-group-addon"> Km/h</div>
 			</div>
 		</div>
 		<div class="form-group">
 			<div class="input-group">
 		    	<label for="exampleInputEmail1">Direccion de email</label>
-		    	<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email destino de alerta">
+		    	<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email destino de alerta" value="{{mail_alerta}}">
 			</div>
 
 	  	</div>

@@ -1,14 +1,11 @@
 Sensores = new Meteor.Collection('sensores');
 
 Sensores.allow({
-  insert: function(userId, lugar){
+  update: function () {
     return true;
   },
-  update: function(userId, lugares, fields, modifier){
-    return true;
-  },
-  remove: function (userId, docs){
-    return true;
+  remove: function () {
+    return false;
   }
 });
 

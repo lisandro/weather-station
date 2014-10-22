@@ -3,6 +3,8 @@ Template.adminPanel.events({
   'submit form': function(e) {
     e.preventDefault();
     
+    var configId = this._id;
+
     var sensor = {
       sensor_id: 1, // capaz sin ''
       hum_a: $(e.target).find('[id=hum_a]').val(),
@@ -17,13 +19,32 @@ Template.adminPanel.events({
       check_hum: $(e.target).find('[id=check_hum]').is(':checked'),
       check_temp: $(e.target).find('[id=check_temp]').is(':checked'),
       check_wind: $(e.target).find('[id=check_wind]').is(':checked'),
+      umbral_hum: $(e.target).find('[id=umbrl_hum]').val(),
+      umbral_temp: $(e.target).find('[id=umbrl_temp]').val(),
+      umbral_viento: $(e.target).find('[id=umbrl_wind]').val(),
+      mail_alerta:'lisandrofalconi@gmail.com'
     }
-    
+
+    Sensores.update(configId, {$set: sensor}, function(error) {
+      if (error) {
+          alert(error.reason);
+      } else {
+          alert('Done');
+          //Router.go('adminPanel');
+        } 
+      });
+          
+
+          /**
     Meteor.call('sensor', sensor, function(error, id) {
       if (error)
         return alert(error.reason);
 
       Router.go('adminPanel');
     });
+}**/
+
+
   }
 });
+

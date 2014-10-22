@@ -1,3 +1,29 @@
+if (Sensores.find().count() === 0) {
+ 
+ Sensores.insert({
+   sensor_id: 1,
+   hum_a: 1,
+   hum_b: 2,
+   hum_c: 3,
+   temp_a: 3,
+   temp_b: 2,
+   temp_c: 1,
+   wind_a: 1,
+   wind_b: 2,
+   wind_c: 3,
+   check_hum: true,
+   check_temp: false,
+   check_wind: true,
+   umbral_hum: 10,
+   umbral_temp: 20,
+   umbral_viento: 30,
+   mail_alerta:'lisandrofalconi@gmail.com',
+   frec_refresh: 5
+ });
+
+} 
+
+
 Meteor.publish('sensores', function() {
 
  return Sensores.find();
