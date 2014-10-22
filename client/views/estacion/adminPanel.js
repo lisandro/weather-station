@@ -29,7 +29,8 @@ Template.adminPanel.events({
       if (error) {
           alert(error.reason);
       } else {
-          alert('Done');
+                    alert('Done');
+
           //Router.go('adminPanel');
         } 
       });
