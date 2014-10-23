@@ -102,11 +102,16 @@
 			</div>
 		</div>
 		<div class="form-group">
-			<div class="input-group">
-		    	<label for="exampleInputEmail1">Direccion de email</label>
-		    	<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email destino de alerta" value="{{mail_alerta}}">
+					<div class="input-group">
+
+			<input type="number" class="form-control" id="frec_refresh" value="{{frec_refresh}}" placeholder="Tiempo de refresco">
+			<div class="input-group-addon"> Seg</div>
 			</div>
 
+		</div>
+		<div class="form-group">
+		    	<label for="exampleInputEmail1">Direccion de email</label>
+		    	<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email destino de alerta" value="{{mail_alerta}}">
 	  	</div>
 		<button type="submit" class="btn btn-primary">Guardar</button>
 </div>

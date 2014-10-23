@@ -22,6 +22,7 @@ Template.adminPanel.events({
       umbral_hum: $(e.target).find('[id=umbrl_hum]').val(),
       umbral_temp: $(e.target).find('[id=umbrl_temp]').val(),
       umbral_viento: $(e.target).find('[id=umbrl_wind]').val(),
+      frec_refresh: $(e.target).find('[id=frec_refresh]').val(),
       mail_alerta:'lisandrofalconi@gmail.com'
     }
 
