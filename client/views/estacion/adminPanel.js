@@ -23,7 +23,7 @@ Template.adminPanel.events({
       umbral_temp: $(e.target).find('[id=umbrl_temp]').val(),
       umbral_viento: $(e.target).find('[id=umbrl_wind]').val(),
       frec_refresh: $(e.target).find('[id=frec_refresh]').val(),
-      mail_alerta:'lisandrofalconi@gmail.com'
+      mail_alerta: $(e.target).find('[id=exampleInputEmail1]').val()
     }
 
     Sensores.update(configId, {$set: sensor}, function(error) {
