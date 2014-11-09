@@ -1,7 +1,7 @@
 var days = ['Domingo','Lunes','Martes','Miercoles','Jueves','Viernes','Sabado'];
 
 Template.estacionHome.helpers({
-	date: function () {
+	dateNow: function () {
 			now = new Date();
 			var minutes = now.getMinutes();
 			var hour = now.getHours();

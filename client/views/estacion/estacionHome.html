@@ -2,7 +2,7 @@
   <div class="panel panel-default">
 		<div id="center_col" class="panel-body">
 			<div class="vk_gy vk_h" id="wob_loc">Mar del Plata, Buenos Aires</div>
-			<div class="vk_gy vk_sh" id="wob_dts">{{date}}</div>
+			<div class="vk_gy vk_sh" id="wob_dts">{{dateNow}}</div>
 
 			<div id="wob_d" style="font:16px arial,helvetica,sans-serif;padding:20px 0 0;-webkit-touch-callout:none;-webkit-user-select:none" class="row">
 
@@ -11,7 +11,7 @@
 					<div style="padding-left:10px;float:left">
 						<div>
 							<div class="vk_bk sol-tmp" style="float:left;margin-top:-3px;font-size:64px">
-								<span class="wob_t" id="wob_tm" style="display:inline">23</span>
+								<span class="wob_t" id="wob_tm" style="display:inline">{{temperatura}}</span>
 							</div>
 							<div class="vk_gy wob-unit" style="float:left;font-size:16px;margin-top:6px">
 								<span class="wob_t" style="display:inline">
@@ -23,14 +23,12 @@
 					</div>
 				</div>
 
-
-
 				<div class="pull-left">
 					<img style="float:left;height:64px;width:64px" alt="undefined" src="https://ssl.gstatic.com/onebox/weather/64/windy.png">
 					<div style="padding-left:10px;float:left">
 						<div>
 							<div class="vk_bk sol-tmp" style="float:left;margin-top:-3px;font-size:64px">
-								<span class="wob_t" id="wob_tm" style="display:inline">10</span>
+								<span class="wob_t" id="wob_tm" style="display:inline">{{viento}}</span>
 							</div>
 							<div class="vk_gy wob-unit" style="float:left;font-size:16px;margin-top:6px">
 								<span class="wob_t" style="display:inline">
@@ -46,7 +44,7 @@
 					<div style="padding-left:10px;float:left">
 						<div>
 							<div class="vk_bk sol-tmp" style="float:left;margin-top:-3px;font-size:64px">
-								<span class="wob_t" id="wob_tm" style="display:inline">88</span>
+								<span class="wob_t" id="wob_tm" style="display:inline">{{humedad}}</span>
 							</div>
 							<div class="vk_gy wob-unit" style="float:left;font-size:16px;margin-top:6px">
 								<span class="wob_t" style="display:inline">
@@ -59,10 +57,9 @@
 
 			</div>
 
+            <div class="vk_gy vk_sh" id="wob_dts">Ultima actualizacion: {{date}}</div>
+
 		</div>
 	</div>
 
-	<div id='messages'>
-
-    </div>
 </template>
