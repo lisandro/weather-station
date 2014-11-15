@@ -22,17 +22,19 @@ var optionsObject = {
     "searching": false,
     "bLengthChange": false,
     "order": [ 0, 'desc' ],
-    /*  dom: 'T<"clear">lfrtip',
-   tableTools: {
-        "sSwfPath": "../swf/copy_csv_xls_pdf.swf"
-    }*/
+    dom: 'T<"clear">lfrtip',
+    "oTableTools": {
+        "aButtons": [
+            "print"
+        ]
+    }
 }
 
 
 Template.estacionHome.helpers({
     dateNow: function () {
         now = new Date();
-        var minutes = now.getMinutes();
+        var minutes = (now.getMinutes()<10?'0':'') + now.getMinutes();
         var hour = now.getHours();
         return days[ now.getDay() ]+", "+ hour +":"+ minutes;
     },
