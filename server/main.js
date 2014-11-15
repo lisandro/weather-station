@@ -1,3 +1,6 @@
+var SerialPort = Meteor.npmRequire('serialport');
+var async = Meteor.npmRequire('async');
+
 process.env.MAIL_URL="smtp://arqavanzada.alerta%40gmail.com:arduino123@smtp.gmail.com:465/";
 
 if (Sensores.find().count() === 0) {
@@ -24,6 +27,25 @@ if (Sensores.find().count() === 0) {
 
 }
 
+/*
+var serialPort = new SerialPort.SerialPort("/dev/ttyUSB0", {
+    baudrate: 115200,
+    databits: 8,
+    stopbits: 1,
+    parity: 'none',
+    parser: SerialPort.parsers.readline('\n\r')
+});
+
+serialPort.on('open',function() {
+    console.log('Port open');
+    serialPort.on('data', function(data) {
+        console.log('Data:'+data);
+    });
+    serialPort.write("NCAN0\n");
+});
+*/
+
+
 Meteor.publish('sensores', function() {
     return Sensores.find();
 });
@@ -36,6 +58,28 @@ var intervalo_original;
 intervalo_original = Sensores.findOne().frec_refresh;
 
 function lecturaSensores() {
+
+
+    /*
+     serialPort.on('open',function() {
+     console.log('Port open BUCLE0');
+
+     serialPort.on('data', function(data) {
+     console.log('Data bucle NCAN0: '+parseInt(data.replace(/;/g,""),10));
+     });
+     serialPort.write("NCAN0\n", function (err,results) {
+
+     });
+     serialPort.write("RDAS\n", function (err,results) {
+     cont++;
+     });
+
+
+
+
+     });
+     */
+
     var configNew = Sensores.findOne();
     if(intervalo_original!=configNew.frec_refresh){
         Meteor.clearInterval(intervalo_refresco);
@@ -44,24 +88,171 @@ function lecturaSensores() {
     }
     intervalo_original = configNew.frec_refresh;
 
-    var temp = valor_temp();
+    //var temp = valor_temp();
+
+    var c = Async.runSync(function (done) {
+        var serialPort = new SerialPort.SerialPort("/dev/ttyUSB0", {
+            baudrate: 115200,
+            databits: 8,
+            stopbits: 1,
+            parity: 'none',
+            parser: SerialPort.parsers.readline('\n\r')
+        });
+
+        serialPort.on('open',function() {
+            //console.log('Port canal1');
+            serialPort.on('data', function(data) {
+                if(data==='Canal = 0'){
+                    done(null,data);
+                }
+            });
+            serialPort.write("NCAN0\n");
+        });
+    });
+
+    var response = Async.runSync(function (done) {
+        var serialPort = new SerialPort.SerialPort("/dev/ttyUSB0", {
+            baudrate: 115200,
+            databits: 8,
+            stopbits: 1,
+            parity: 'none',
+            parser: SerialPort.parsers.readline('\n\r')
+        });
+
+        serialPort.on('open',function() {
+            //console.log('Port open BUCLE0');
+
+            serialPort.on('data', function(data) {
+                var temperatura = parseInt(data.replace(/;/g, ""), 10);
+                //console.log('Data bucle NCAN0: '+ temperatura);
+                if(temperatura!= undefined){
+                    done(null, temperatura);
+                }
+            });
+
+            serialPort.write("RDAS\n", function (err,results) {
+            });
+
+        });
+    });
+
+    console.log('temp recibida: '+response.result);
+
+
+    var temp = response.result;
+
+
+    var a = Async.runSync(function (done) {
+        var serialPort = new SerialPort.SerialPort("/dev/ttyUSB0", {
+            baudrate: 115200,
+            databits: 8,
+            stopbits: 1,
+            parity: 'none',
+            parser: SerialPort.parsers.readline('\n\r')
+        });
+
+        serialPort.on('open',function() {
+            //console.log('Port canal1');
+            serialPort.on('data', function(data) {
+                if(data==='Canal = 1'){
+                    done(null,data);
+                }
+            });
+            serialPort.write("NCAN1\n");
+        });
+    });
+
+    //console.log('result ncan1; '+a.result);
+
+    var response3 = Async.runSync(function (done) {
+        var serialPort = new SerialPort.SerialPort("/dev/ttyUSB0", {
+            baudrate: 115200,
+            databits: 8,
+            stopbits: 1,
+            parity: 'none',
+            parser: SerialPort.parsers.readline('\n\r')
+        });
+        serialPort.on('open',function() {
+            serialPort.on('data', function(data) {
+                var viento = parseInt(data.replace(/;/g, ""), 10);
+                if(viento!=undefined){
+                    done(null, viento);
+                }
+            });
+
+            serialPort.write("RDAS\n", function (err,results) {
+            });
+
+        });
+    });
+
+    console.log('viento recibido: '+response3.result);
+
+
+
+
+    var b = Async.runSync(function (done) {
+        var serialPort = new SerialPort.SerialPort("/dev/ttyUSB0", {
+            baudrate: 115200,
+            databits: 8,
+            stopbits: 1,
+            parity: 'none',
+            parser: SerialPort.parsers.readline('\n\r')
+        });
+
+        serialPort.on('open',function() {
+            //console.log('Port canal1');
+            serialPort.on('data', function(data) {
+                if(data==='Canal = 2'){
+                    done(null,data);
+                }
+            });
+            serialPort.write("NCAN2\n");
+        });
+    });
+
+    //console.log('result ncan1; '+a.result);
+
+    var response4 = Async.runSync(function (done) {
+        var serialPort = new SerialPort.SerialPort("/dev/ttyUSB0", {
+            baudrate: 115200,
+            databits: 8,
+            stopbits: 1,
+            parity: 'none',
+            parser: SerialPort.parsers.readline('\n\r')
+        });
+        serialPort.on('open',function() {
+            serialPort.on('data', function(data) {
+                var humedad = parseInt(data.replace(/;/g, ""), 10);
+                if(humedad!=undefined){
+                    done(null, humedad);
+                }
+            });
+
+            serialPort.write("RDAS\n", function (err,results) {
+            });
+
+        });
+    });
+
+    console.log('humedad recibido: '+response4.result);
+
+
+
     var hum = valor_hum();
     var wind = valor_viento();
 
+
     if(temp>configNew.umbral_temp){
-        console.log('supero umbral temperatura')
-        enviarMail(configNew.mail_alerta, "Alerta - Temperatura de "+temp+"°C mayor al umbral de "+configNew.umbral_temp+"°C");
+        //enviarMail(configNew.mail_alerta, "Alerta - Temperatura de "+temp+"°C mayor al umbral de "+configNew.umbral_temp+"°C");
     }
 
     if(hum>configNew.umbral_hum){
-        console.log('supero umbral hum')
-        enviarMail(configNew.mail_alerta, "Alerta - Humedad del "+hum+"% mayor al umbral del "+configNew.umbral_hum+"%");
+        //enviarMail(configNew.mail_alerta, "Alerta - Humedad del "+hum+"% mayor al umbral del "+configNew.umbral_hum+"%");
     }
 
     if(wind>configNew.umbral_viento){
-        console.log('supero umbral viento')
-
-        enviarMail(configNew.mail_alerta, "Alerta - Viento a "+wind+"Km/h mayor al umbral de "+configNew.umbral_viento+"Km/h");
+        //enviarMail(configNew.mail_alerta, "Alerta - Viento a "+wind+"Km/h mayor al umbral de "+configNew.umbral_viento+"Km/h");
     }
 
 
@@ -78,9 +269,35 @@ intervalo_refresco = Meteor.setInterval(lecturaSensores, intervalo_original*1000
 
 function valor_temp(){
     //acá hay que leer el sensor de temperatura de la placa, y devolverlo listo para guardar
-    var temp = ['10','15','20','24','35','28'];
-    rand_temp = Math.floor(Math.random() * (5 - 0)) + 0;
-    return temp[rand_temp];
+    /* var temp = ['10','15','20','24','35','28'];
+     rand_temp = Math.floor(Math.random() * (5 - 0)) + 0;
+     return temp[rand_temp];
+
+
+     */
+    var serialPort = new SerialPort.SerialPort("/dev/ttyUSB0", {
+        baudrate: 115200,
+        databits: 8,
+        stopbits: 1,
+        parity: 'none',
+        parser: SerialPort.parsers.readline('\n\r')
+    });
+
+    serialPort.on('open',function() {
+        console.log('Port open BUCLE0');
+
+        serialPort.on('data', function(data) {
+            var temperatura = parseInt(data.replace(/;/g, ""), 10);
+            console.log('Data bucle NCAN0: '+ temperatura);
+            if(temperatura!= undefined){
+                return temperatura;
+            }
+        });
+
+        serialPort.write("RDAS\n", function (err,results) {
+        });
+
+    });
 }
 
 function valor_hum(){
@@ -105,3 +322,4 @@ function enviarMail(to, subject){
         text: subject
     });
 }
+

@@ -1,5 +1,8 @@
 {
   "dependencies": {
+    "async": {
+      "version": "http://registry.npmjs.org/async/-/async-0.9.0.tgz"
+    },
     "serialport": {
       "version": "http://registry.npmjs.org/serialport/-/serialport-1.4.6.tgz",
       "dependencies": {
@@ -241,10 +244,10 @@
           "version": "http://registry.npmjs.org/optimist/-/optimist-0.6.1.tgz",
           "dependencies": {
             "wordwrap": {
-              "version": "http://registry.npmjs.org/wordwrap/-/wordwrap-0.0.2.tgz"
+              "version": "0.0.2"
             },
             "minimist": {
-              "version": "http://registry.npmjs.org/minimist/-/minimist-0.0.10.tgz"
+              "version": "0.0.10"
             }
           }
         },
