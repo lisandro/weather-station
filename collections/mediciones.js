@@ -5,13 +5,13 @@
 Mediciones = new Meteor.Collection('mediciones');
 
 Mediciones.allow({
-    update: function () {
+    update: function() {
         return true;
     },
-    insert: function () {
+    insert: function() {
         return true;
     },
-    remove: function () {
+    remove: function() {
         return false;
     }
 });

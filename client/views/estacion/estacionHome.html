@@ -8,59 +8,55 @@
 
 
                 {{#if check_temp}}
-                    <div class="pull-left">
-                        <img style="float:left;height:64px;width:64px" alt="undefined" src="https://ssl.gstatic.com/onebox/weather/64/sunny.png" id="wob_tci">
-                        <div style="padding-left:10px;float:left">
-                            <div>
-                                <div class="vk_bk sol-tmp" style="float:left;margin-top:-3px;font-size:64px">
-                                    <span class="wob_t" id="wob_tm" style="display:inline">{{temperatura}}</span>
-                                </div>
-                                <div class="vk_gy wob-unit" style="float:left;font-size:16px;margin-top:6px">
-								<span class="wob_t" style="display:inline">
+                <div class="pull-left">
+                    <img style="float:left;height:64px;width:64px" alt="undefined" src="https://ssl.gstatic.com/onebox/weather/64/sunny.png" id="wob_tci">
+                    <div style="padding-left:10px;float:left">
+                        <div>
+                            <div class="vk_bk sol-tmp" style="float:left;margin-top:-3px;font-size:64px">
+                                <span class="wob_t" id="wob_tm" style="display:inline">{{temperatura}}</span>
+                            </div>
+                            <div class="vk_gy wob-unit" style="float:left;font-size:16px;margin-top:6px">
+                                <span class="wob_t" style="display:inline">
 									&#176;	
 									<span>C</span>
-								</span>
-                                </div>
+                                </span>
                             </div>
                         </div>
                     </div>
-                {{/if}}
+                </div>
+                {{/if}} {{#if check_wind}}
 
-                {{#if check_wind}}
-
-                    <div class="pull-left">
-                        <img style="float:left;height:64px;width:64px" alt="undefined" src="https://ssl.gstatic.com/onebox/weather/64/windy.png">
-                        <div style="padding-left:10px;float:left">
-                            <div>
-                                <div class="vk_bk sol-tmp" style="float:left;margin-top:-3px;font-size:64px">
-                                    <span class="wob_t" id="wob_tm" style="display:inline">{{viento}}</span>
-                                </div>
-                                <div class="vk_gy wob-unit" style="float:left;font-size:16px;margin-top:6px">
-								<span class="wob_t" style="display:inline">
+                <div class="pull-left">
+                    <img style="float:left;height:64px;width:64px" alt="undefined" src="https://ssl.gstatic.com/onebox/weather/64/windy.png">
+                    <div style="padding-left:10px;float:left">
+                        <div>
+                            <div class="vk_bk sol-tmp" style="float:left;margin-top:-3px;font-size:64px">
+                                <span class="wob_t" id="wob_tm" style="display:inline">{{viento}}</span>
+                            </div>
+                            <div class="vk_gy wob-unit" style="float:left;font-size:16px;margin-top:6px">
+                                <span class="wob_t" style="display:inline">
 									<span> km/h</span>
-								</span>
-                                </div>
+                                </span>
                             </div>
                         </div>
                     </div>
-                {{/if}}
-
-                {{#if check_hum}}
-                    <div class="pull-left">
-                        <img style="float:left;height:64px;width:64px" alt="undefined" src="Humidity-icon.png" id="wob_tci">
-                        <div style="padding-left:10px;float:left">
-                            <div>
-                                <div class="vk_bk sol-tmp" style="float:left;margin-top:-3px;font-size:64px">
-                                    <span class="wob_t" id="wob_tm" style="display:inline">{{humedad}}</span>
-                                </div>
-                                <div class="vk_gy wob-unit" style="float:left;font-size:16px;margin-top:6px">
-								<span class="wob_t" style="display:inline">
+                </div>
+                {{/if}} {{#if check_hum}}
+                <div class="pull-left">
+                    <img style="float:left;height:64px;width:64px" alt="undefined" src="Humidity-icon.png" id="wob_tci">
+                    <div style="padding-left:10px;float:left">
+                        <div>
+                            <div class="vk_bk sol-tmp" style="float:left;margin-top:-3px;font-size:64px">
+                                <span class="wob_t" id="wob_tm" style="display:inline">{{humedad}}</span>
+                            </div>
+                            <div class="vk_gy wob-unit" style="float:left;font-size:16px;margin-top:6px">
+                                <span class="wob_t" style="display:inline">
 									<span> %</span>
-								</span>
-                                </div>
+                                </span>
                             </div>
                         </div>
                     </div>
+                </div>
                 {{/if}}
             </div>
 

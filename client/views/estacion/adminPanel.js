@@ -29,7 +29,9 @@ Template.adminPanel.events({
             minuto_apagado: $(e.target).find('[id=minutoApagado]').val()
         }
 
-        Sensores.update(configId, {$set: sensor}, function(error) {
+        Sensores.update(configId, {
+            $set: sensor
+        }, function(error) {
             if (error) {
                 alert(error.reason);
             } else {
@@ -38,25 +40,20 @@ Template.adminPanel.events({
         });
     },
 
-    "click #encenderLuzD": function (event, template) {
-        Meteor.call('encenderLuzD', function (error, result) {
-        });
+    "click #encenderLuzD": function(event, template) {
+        Meteor.call('encenderLuzD', function(error, result) {});
     },
 
-    "click #encenderLuzI": function (event, template) {
-        Meteor.call('encenderLuzI', function (error, result) {
-        });
+    "click #encenderLuzI": function(event, template) {
+        Meteor.call('encenderLuzI', function(error, result) {});
     },
 
-    "click #encenderLuces": function (event, template) {
-        Meteor.call('encenderLuces', function (error, result) {
-        });
+    "click #encenderLuces": function(event, template) {
+        Meteor.call('encenderLuces', function(error, result) {});
     },
 
-    "click #apagarLuces": function (event, template) {
-        Meteor.call('apagarLuces', function (error, result) {
-        });
+    "click #apagarLuces": function(event, template) {
+        Meteor.call('apagarLuces', function(error, result) {});
     }
 
 });
-

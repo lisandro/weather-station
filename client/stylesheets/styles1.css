@@ -1,20 +1,19 @@
 .vk_gy {
-	color: #878787 !important;
+    color: #878787 !important;
 }
-
 .vk_h {
-	font-size: x-large !important;
-	font-weight: lighter !important;
+    font-size: x-large !important;
+    font-weight: lighter !important;
 }
-
-.vk_sh, .vk_hs, .vk_med {
-	font-size: medium !important;
-	font-weight: lighter !important;
+.vk_sh,
+.vk_hs,
+.vk_med {
+    font-size: medium !important;
+    font-weight: lighter !important;
 }
-
 .container {
-	padding-right: 15px;
-	padding-left: 15px;
-	margin-right: auto;
-	margin-left: auto;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
 }

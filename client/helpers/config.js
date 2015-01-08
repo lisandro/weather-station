@@ -1,8 +1,8 @@
 accountsUIBootstrap3.setLanguage('es');
 Accounts.ui.config({
-  passwordSignupFields: 'USERNAME_ONLY'
+    passwordSignupFields: 'USERNAME_ONLY'
 });
 
 Accounts.config({
-  //forbidClientAccountCreation : true
+    //forbidClientAccountCreation : true
 });
