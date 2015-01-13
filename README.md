@@ -19,11 +19,14 @@ El proyecto consiste por un lado un *módulo público* donde se publican en tiem
 
 Existe un usuario administrador que accede a un *panel de administración* privado, donde puede configurar la estación meteorológica con los siguientes parámetros:
 
-[1] Coeficientes de los polinomios de la función de transferencia para cada uno de los sensores en cuestión-
-[2] Umbrales máximos para cada uno de los indicadores que disparan una alarma por email, también configurable.
-[3] Intervalo de refresco, en segundos, de los sensores.
-[4] Sensores habilitados.
-[5] Encendido y apagado de luces del gabinete, y programación del encendido y apagado de las mismas.
+1. Coeficientes de los polinomios de la función de transferencia para
+    cada uno de los sensores en cuestión-
+2. Umbrales máximos para cada uno de los indicadores que disparan una
+    alarma por email, también configurable.
+3. Intervalo de refresco, en segundos, de los sensores.
+4. Sensores habilitados.
+5. Encendido y apagado de luces del gabinete, y programación del
+    encendido y apagado de las mismas.
 
 El sistema esta desarrollado utilizando el entorno [Meteor](https://www.meteor.com/) puro JavaScript.
 
@@ -35,15 +38,15 @@ Luego de obtener los valores "humanos" los inserta en una base de datos no relac
 
 Instalación
 -------------
-[1] Instalar Meteor en OS X o Linux : 
+- Instalar Meteor en OS X o Linux : 
 ```
 curl https://install.meteor.com/ | sh
 ```
-[2] Conectar el PIC encendido utilizando un conversor Serial a USB y ejecutar el siguiente comando en la consola
+- Conectar el PIC encendido utilizando un conversor Serial a USB y ejecutar el siguiente comando en la consola que permite leer y escribir el dispositivo
 ```
 sudo chmod 666 /dev/ttyUSB0
 ```
-[3] Finalmente ejecutar en el directorio del proyecto 
+- Finalmente ejecutar en el directorio del proyecto 
 ```
 meteor
 ```
